@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class PlayerController : MonoBehaviour
 
     private bool LadderChk = false;
     private bool IsJump = true;
+
+    public GameObject Simmoon;
 
     // Start is called before the first frame update
     void Start()
@@ -62,6 +65,11 @@ public class PlayerController : MonoBehaviour
         {
             isLadder = true;
         }
+
+        if (other.gameObject.CompareTag("NPC"))
+        {
+            Simmoon.SetActive(true);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -77,6 +85,11 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("Ladder"))
         {
             isLadder = false;
+        }
+
+        if (other.gameObject.CompareTag("NPC"))
+        {
+            Simmoon.SetActive(false);
         }
     }
 }
