@@ -43,7 +43,7 @@ public class DialogueSystem : MonoBehaviour
         foreach(var letter in sentence)
         {
             txtsentence.text += letter;
-            yield return new WaitForSeconds(0.05f);
+            yield return new WaitForSeconds(0.01f);
         }
     }
     private void End()
