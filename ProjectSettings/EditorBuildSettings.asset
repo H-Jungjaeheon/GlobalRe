@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Jaheon/Title.unity
+    guid: 9b5010e4d9659e244a3d5ef06b108657
+  - enabled: 1
+    path: Assets/SungBum/Scene/SunbumScene.unity
+    guid: 72107de379f054043b97278416cbadf9
   m_configObjects: {}
