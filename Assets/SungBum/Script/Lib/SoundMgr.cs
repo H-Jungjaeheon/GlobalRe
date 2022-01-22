@@ -53,6 +53,7 @@ public class SoundMgr : SingletonMono<SoundMgr>
         child.transform.SetParent(transform);
         bgmPlayer = child.AddComponent<AudioSource>();
         bgmPlayer.clip = BGMClip;
+        bgmPlayer.loop = true;
         bgmPlayer.volume = masterVolumeBGM;
     }
 
@@ -61,6 +62,12 @@ public class SoundMgr : SingletonMono<SoundMgr>
         if (bgmPlayer != null)
             bgmPlayer.Play();
     }
+
+    public void RePlayBGM()
+    {
+        bgmPlayer.Play();
+    }
+
 
     // 한 번 재생 : 볼륨 매개변수로 지정
     public void PlaySound(string a_name, float a_volume = 1f)
@@ -110,6 +117,11 @@ public class SoundMgr : SingletonMono<SoundMgr>
     public void StopBGM()
     {
         bgmPlayer.Stop();
+    }
+
+    public void StopSFX()
+    {
+        sfxPlayer.Stop();
     }
 
     #region 옵션에서 볼륨조절

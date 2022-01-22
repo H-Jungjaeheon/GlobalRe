@@ -38,7 +38,10 @@ public class UIManeger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if(Input.GetKeyDown(KeyCode.Q))
+        {
+            LimitTime -= 10;
+        }
     }
 
     IEnumerator DayPatton()
@@ -46,7 +49,9 @@ public class UIManeger : MonoBehaviour
         switch (DayCnt)
         {
             case 1:
+                SoundMgr.In.StopBGM();
                 StartCoroutine("PanFadeIn", 0.9f);
+                SoundMgr.In.PlaySound("Ball");
                 yield return new WaitForSeconds(0.75f);
                 Sign.SetActive(true);
 
@@ -55,6 +60,7 @@ public class UIManeger : MonoBehaviour
                 yield return new WaitForSeconds(1.0f);
 
                 StartCoroutine("TextFadeOut", 0.6f);
+                SoundMgr.In.RePlayBGM();
 
                 yield return new WaitForSeconds(0.75f);
                 StartCoroutine("SceondDay");
@@ -63,8 +69,13 @@ public class UIManeger : MonoBehaviour
                 break;
 
             case 2:
+                SoundMgr.In.StopBGM();
                 StartCoroutine("PanFadeIn", 0.9f);
+                SoundMgr.In.PlaySound("Ball");
                 yield return new WaitForSeconds(1.0f);
+
+                SoundMgr.In.PlayLoopSound("Movement_Proposition");
+
 
                 PolicePan.SetActive(true);
 
@@ -83,6 +94,7 @@ public class UIManeger : MonoBehaviour
 
                 if (Ending == 1)
                 {
+                    SoundMgr.In.StopSFX();
                     SceneManager.LoadScene("HappyEnding");
                 }
 

@@ -7,7 +7,9 @@ using UnityEngine.SceneManagement;
 
 public class ButtonManager : MonoBehaviour
 {
-    [SerializeField] Image Explanation, Setting;
+    [SerializeField] 
+    Image Explanation, Setting;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,7 +30,7 @@ public class ButtonManager : MonoBehaviour
     public void GameStart()
     {
         //SceneManager.LoadScene("SunbumScene");
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene("SunbumScene");
     }
     public void ExplanationButtonClick()
     {
