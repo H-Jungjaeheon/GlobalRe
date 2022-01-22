@@ -99,7 +99,7 @@ public class UIManeger : MonoBehaviour
     IEnumerator FirstDay()
     {
         Day.text = "첫째 날";
-        LimitTime = 30.0f;
+        LimitTime = 180.0f;
         DayCnt = 1;
         ChanceCnt = 1;
 
@@ -118,7 +118,7 @@ public class UIManeger : MonoBehaviour
     IEnumerator SceondDay()
     {
         Day.text = "둘째 날";
-        LimitTime = 30.0f;
+        LimitTime = 180.0f;
         DayCnt = 2;
         ChanceCnt = 2;
 
