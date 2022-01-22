@@ -9,6 +9,8 @@ public class DialogueSystem : MonoBehaviour
     public Text txtName;
     public Text txtsentence;
 
+    public bool EndText = false;
+
     Queue<string> sentences = new Queue<string>();
     public Animator anim;
     public void Begin(Dialogue info)
@@ -50,5 +52,7 @@ public class DialogueSystem : MonoBehaviour
     {
         anim.SetBool("isOpen", false);
         txtsentence.text = string.Empty;
+
+        EndText = true;
     }
 }

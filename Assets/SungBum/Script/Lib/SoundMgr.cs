@@ -33,6 +33,11 @@ public class SoundMgr : SingletonMono<SoundMgr>
     AudioSource sfxPlayer;
     AudioSource bgmPlayer;
 
+    private void Update()
+    {
+        
+    }
+
     void AwakeAfter()
     {
         sfxPlayer = GetComponent<AudioSource>();

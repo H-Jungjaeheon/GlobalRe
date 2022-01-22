@@ -246,11 +246,11 @@ public class UIManeger : MonoBehaviour
 
     public void Ending1()
     {
-        Ending = 1;
+        Ending = 2;
     }
 
     public void Ending2()
     {
-        Ending = 2;
+        Ending = 1;
     }
 }
