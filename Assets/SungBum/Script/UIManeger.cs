@@ -19,6 +19,8 @@ public class UIManeger : MonoBehaviour
 
     public GameObject PolicePan;
 
+    public GameObject Sign;
+
     public float LimitTime;
     public int ChanceCnt;
     public int DayCnt;
@@ -46,6 +48,7 @@ public class UIManeger : MonoBehaviour
             case 1:
                 StartCoroutine("PanFadeIn", 0.9f);
                 yield return new WaitForSeconds(0.75f);
+                Sign.SetActive(true);
 
                 StartCoroutine("TextFadeIn", 0.6f);
 

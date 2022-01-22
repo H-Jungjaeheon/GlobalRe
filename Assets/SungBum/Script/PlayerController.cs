@@ -27,6 +27,10 @@ public class PlayerController : MonoBehaviour
     public GameObject Simmoon;
     public bool SimmoonChance = false;
 
+    public GameObject Sign;
+    public GameObject SignTxt;
+    public bool SignChance = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,6 +44,7 @@ public class PlayerController : MonoBehaviour
     {
         PlayerMove();
         SimmonStart();
+        SignStart();
     }
 
     void PlayerMove()
@@ -97,6 +102,26 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    void SignStart()
+    {
+        if (SignChance)
+        {
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                Sign.SetActive(true);
+                SignChance = false;
+            }
+        }
+
+        else
+        {
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                Sign.SetActive(false);
+            }
+        }
+    }
+
     private bool isLadder;
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -110,6 +135,12 @@ public class PlayerController : MonoBehaviour
         {
             SimmoonChance = true;
             Simmoon.SetActive(true);
+        }
+
+        if (other.gameObject.CompareTag("Sign"))
+        {
+            SignChance = true;
+            SignTxt.SetActive(true);
         }
     }
 
@@ -133,6 +164,12 @@ public class PlayerController : MonoBehaviour
         {
             SimmoonChance = false;
             Simmoon.SetActive(false);
+        }
+
+        if (other.gameObject.CompareTag("Sign"))
+        {
+            SignChance = false;
+            SignTxt.SetActive(false);
         }
     }
 }
